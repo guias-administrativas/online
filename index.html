@@ -1,988 +1,563 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIL Fios e Cabos Elétricos - Home</title>
-    <meta name="description" content="Empresa líder na fabricação de fios e cabos elétricos com produtos de alta qualidade e tecnologia. Conheça nossa linha de produtos.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Anmy Perfumes Importados LTDA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-color: #9b2e7e; /* Rosa-púrpura */
+            --secondary-color: #f3a4ba; /* Rosa suave */
+            --accent-color: #ffd1dc; /* Rosa clarinho */
+            --dark-color: #4a154b; /* Roxo escuro */
+            --light-color: #fff5f7; /* Rosa muito claro */
+            --gold-color: #d4af37; /* Dourado */
         }
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
+            font-family: 'Segoe UI', 'Tahoma', 'Geneva', Verdana, sans-serif;
+            color: var(--dark-color);
             line-height: 1.6;
-            overflow-x: hidden;
+            background-color: var(--light-color);
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
         }
-
-        ul {
-            list-style: none;
+        
+        .hero-section {
+            background: linear-gradient(rgba(74, 21, 75, 0.75), rgba(155, 46, 126, 0.75)), 
+                        url('https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
         }
-
-        img {
-            max-width: 100%;
-            height: auto;
+        
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--gold-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: inline-block;
+            font-weight: 600;
         }
-
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        
+        .highlight-box {
+            background-color: white;
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
-
-        .header-top {
-            display: flex;
-            justify-content: flex-end;
-            padding: 5px 5%;
-            background: rgba(0,0,0,0.2);
-        }
-
-        .lang-selector a {
-            color: #fff;
-            font-size: 12px;
-            margin-left: 10px;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .lang-selector a:hover {
-            opacity: 1;
-        }
-
-        .header-main {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 5%;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 5px;
-        }
-
-        .nav-menu > li {
-            position: relative;
-        }
-
-        .nav-menu > li > a {
-            color: #fff;
-            font-size: 13px;
-            font-weight: 500;
-            padding: 10px 12px;
-            display: block;
-            transition: color 0.3s;
-        }
-
-        .nav-menu > li > a:hover {
-            color: #f7931e;
-        }
-
-        .nav-menu li .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #fff;
-            min-width: 200px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .nav-menu li:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown li a {
-            display: block;
-            padding: 10px 15px;
-            color: #333;
-            font-size: 13px;
-            border-bottom: 1px solid #eee;
-            transition: all 0.3s;
-        }
-
-        .dropdown li a:hover {
-            background: #f7931e;
-            color: #fff;
-        }
-
-        .header-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            color: #fff;
-            font-size: 18px;
-            opacity: 0.8;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            opacity: 1;
-            color: #f7931e;
-        }
-
-        .social-icons img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover img {
-            filter: brightness(0) saturate(100%) invert(63%) sepia(89%) saturate(1015%) hue-rotate(360deg) brightness(101%) contrast(94%);
-        }
-
-        .search-btn {
-            background: none;
+        
+        .perfume-card {
             border: none;
-            color: #fff;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Hero Slider */
-        .hero-slider {
-            margin-top: 90px;
-            position: relative;
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            background-color: white;
         }
-
-        .slider-container {
-            display: flex;
+        
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(155, 46, 126, 0.2);
+        }
+        
+        .perfume-card .card-img-top {
+            height: 280px;
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
-
-        .slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .slide img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        .slide-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-        }
-
-        .slide-content img {
-            max-width: 400px;
-            height: auto;
-        }
-
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slider-nav:hover {
-            background: rgba(255,255,255,0.4);
-        }
-
-        .slider-nav.prev {
-            left: 20px;
-        }
-
-        .slider-nav.next {
-            right: 20px;
-        }
-
-        .slider-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-        }
-
-        .slider-dots .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .slider-dots .dot.active {
-            background: #fff;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            text-align: center;
-            padding: 50px 5%;
-            background: #fff;
-        }
-
-        .cta-section h2 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .cta-section p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .btn-whatsapp {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #25d366;
-            color: #fff;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-whatsapp:hover {
-            background: #1da851;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        .btn-whatsapp img {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Products Slider */
-        .products-slider {
-            position: relative;
-            overflow: hidden;
-            background: #f5f5f5;
-        }
-
-        .products-slider-container {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .product-slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .product-slide img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .product-slide-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            color: #fff;
-        }
-
-        /* Floating WhatsApp Button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 999;
-        }
-
-        .floating-whatsapp a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #25d366;
-            color: #fff;
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s;
-        }
-
-        .floating-whatsapp a:hover {
+        
+        .perfume-card:hover .card-img-top {
             transform: scale(1.05);
         }
-
-        /* Orcamento Section */
-        .orcamento-section {
+        
+        .perfume-card .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            font-weight: 600;
+            padding: 15px;
             text-align: center;
-            padding: 60px 5%;
-            background: #fff;
         }
-
-        .orcamento-section h2 {
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .orcamento-section p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .btn-orcamento {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #f7931e;
-            color: #fff;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(247, 147, 30, 0.4);
-        }
-
-        .btn-orcamento:hover {
-            background: #e8850a;
-            transform: translateY(-2px);
-        }
-
-        /* Features Section */
-        .features-section {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            background: #1a1a2e;
-        }
-
-        .feature-card {
-            position: relative;
-            overflow: hidden;
-            height: 250px;
-        }
-
-        .feature-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .feature-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .feature-card .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .feature-card .icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Products Services Section */
-        .products-services {
-            padding: 80px 5%;
-            background: #fff;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .section-header p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 15px;
-        }
-
-        .section-header strong {
-            color: #333;
-            font-weight: 600;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .product-card-image {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .product-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .product-card-image .label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255,255,255,0.9);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-card-content {
-            padding: 25px;
-        }
-
-        .product-card-content h3 {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .product-card-content p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .product-card-content a {
-            color: #f7931e;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .product-card-content a:hover {
-            color: #e8850a;
-        }
-
-        /* Footer */
-        .footer {
-            background: #1a1a2e;
-            color: #fff;
-            padding: 60px 5% 0;
-        }
-
-        .footer-top {
-            display: grid;
-            grid-template-columns: 1fr 1fr 2fr;
-            gap: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-section h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .footer-section p {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        .footer-section a {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            display: block;
-            margin-bottom: 8px;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: #f7931e;
-        }
-
-        .footer-section .highlight {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .footer-section .link-orange {
-            color: #f7931e;
-        }
-
-        .news-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .news-item img {
+        
+        .icon-feature {
             width: 80px;
             height: 80px;
-            object-fit: cover;
-            border-radius: 5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease;
         }
-
-        .news-item-content h5 {
-            font-size: 15px;
+        
+        .icon-feature:hover {
+            transform: scale(1.1);
+        }
+        
+        .icon-feature i {
+            font-size: 35px;
+            color: var(--primary-color);
+        }
+        
+        .about-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+            color: var(--gold-color);
+        }
+        
+        .company-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 8px 20px rgba(155, 46, 126, 0.2);
+        }
+        
+        .btn-custom {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            transform: scale(1.05);
+            color: white;
+        }
+        
+        .product-gallery img {
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .product-gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(155, 46, 126, 0.2);
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #f0c4d4;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .badge-custom {
+            background: linear-gradient(135deg, var(--gold-color), #ffc107);
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 5px 12px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-info:hover {
+            transform: translateX(5px);
+        }
+        
+        .nav-link {
+            color: var(--dark-color) !important;
             font-weight: 500;
-            margin-bottom: 5px;
+            transition: color 0.3s ease;
         }
-
-        .news-item-content a {
-            color: #f7931e;
-            font-size: 13px;
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
         }
-
-        .footer-bottom {
-            text-align: center;
-            padding: 25px 0;
-            color: rgba(255,255,255,0.5);
-            font-size: 13px;
+        
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 15px rgba(155, 46, 126, 0.1);
         }
-
-        .footer-bottom a {
-            color: #f7931e;
+        
+        .hero-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--accent-color);
         }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .features-section {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-top {
-                grid-template-columns: 1fr 1fr;
-            }
+        
+        .price-tag {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: bold;
         }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #1a1a2e;
-                flex-direction: column;
-                padding: 20px;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .header-icons .social-icons {
-                display: none;
-            }
-
-            .hero-slider {
-                margin-top: 70px;
-            }
-
-            .slide img {
-                height: 300px;
-            }
-
-            .features-section {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-top {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-section h2,
-            .orcamento-section h2 {
-                font-size: 22px;
-            }
-
-            .section-header h2 {
-                font-size: 26px;
-            }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--gold-color);
         }
-
-        @media (max-width: 480px) {
-            .features-section {
-                grid-template-columns: 1fr;
-            }
-
-            .slider-nav {
-                width: 35px;
-                height: 35px;
-                font-size: 18px;
-            }
-        }
-
-        /* SVG Icons inline */
-        .icon-whatsapp {
-            width: 24px;
-            height: 24px;
+        
+        .rating i {
+            color: #ffc107;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-top">
-            <div class="lang-selector">
-                <a href="#">ENG</a>
-                <span style="color: #fff; opacity: 0.5;">|</span>
-                <a href="#">ESP</a>
-            </div>
-        </div>
-        <div class="header-main">
-            <a href="#" class="logo">
-                <img src="https://ext.same-assets.com/1441184407/3414934892.png" alt="SIL Fios e Cabos">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-flower2 me-2"></i>Anmy Perfumes
             </a>
-            <nav>
-                <ul class="nav-menu" id="navMenu">
-                    <li>
-                        <a href="#">EMPRESA</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Histórico</a></li>
-                            <li><a href="#">Tecnologia</a></li>
-                            <li><a href="#">Certificados</a></li>
-                            <li><a href="#">Homologações</a></li>
-                            <li><a href="#">Política Integrada</a></li>
-                            <li><a href="#">Prêmios</a></li>
-                            <li><a href="#">Responsabilidade Social</a></li>
-                            <li><a href="#">Sustentabilidade</a></li>
-                        </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Início</a>
                     </li>
-                    <li>
-                        <a href="#">PRODUTOS</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Cabos Flexíveis</a></li>
-                            <li><a href="#">Cordões</a></li>
-                            <li><a href="#">Cabos Rígidos</a></li>
-                            <li><a href="#">Fios</a></li>
-                            <li><a href="#">Cabos de Rede</a></li>
-                            <li><a href="#">Carretéis</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre Nós</a>
                     </li>
-                    <li>
-                        <a href="#">VENDAS</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Nacionais</a></li>
-                            <li><a href="#">Exportação</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Perfumes</a>
                     </li>
-                    <li>
-                        <a href="#">MARKETING</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Filmes</a></li>
-                            <li><a href="#">Campanhas</a></li>
-                            <li><a href="#">SIL no Futebol</a></li>
-                            <li><a href="#">TV, Rádio e Revista</a></li>
-                            <li><a href="#">Mídias Digitais</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Galeria</a>
                     </li>
-                    <li><a href="#">VÍDEO E PODCAST</a></li>
-                    <li><a href="#">SIL NEWS</a></li>
-                    <li>
-                        <a href="#">ELETRICISTA</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Apostilas</a></li>
-                            <li><a href="#">Tabelas</a></li>
-                            <li><a href="#">Cadastro Eletricista</a></li>
-                            <li><a href="#">Simuladores</a></li>
-                            <li><a href="#">Ensino a Distância</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">CONTATO</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Dúvidas</a></li>
-                            <li><a href="#">Fale Conosco</a></li>
-                            <li><a href="#">Trabalhe Conosco</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
                     </li>
                 </ul>
-            </nav>
-            <div class="header-icons">
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/sil_fios_e_cabos" target="_blank">
-                        <img src="https://ext.same-assets.com/1441184407/2624727071.png" alt="Instagram">
-                    </a>
-                    <a href="https://pt-br.facebook.com/silfiosecabos" target="_blank">
-                        <img src="https://ext.same-assets.com/1441184407/1050723498.png" alt="Facebook">
-                    </a>
-                </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Slider -->
-    <section class="hero-slider">
-        <div class="slider-container" id="heroSlider">
-            <div class="slide">
-                <img src="https://ext.same-assets.com/1441184407/3810719012.jpeg" alt="Paulistão 2026">
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Descubra o Perfume que Conta Sua História</h1>
+            <p class="hero-quote">"Uma fragrância é mais que um perfume - é uma memória que fica no ar, uma assinatura invisível que nos define."</p>
+            <a href="#products" class="btn btn-custom btn-lg">Explorar Fragrâncias</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Nossa Essência</h2>
+                    <p class="mb-4">A <strong>Anmy Perfumes Importados LTDA</strong> foi fundada em <strong>8 de março de 2010</strong> na encantadora cidade de <strong>Belo Horizonte, Minas Gerais</strong>. Desde então, nos dedicamos a trazer as mais requintadas fragrâncias internacionais para o público brasileiro.</p>
+                    
+                    <div class="company-info">
+                        <h4 class="mb-3"><i class="bi bi-building me-2"></i>Informações Corporativas</h4>
+                        <p><strong>CNPJ:</strong> 47.964.644/0001-63</p>
+                        <p><strong>Atividade Principal:</strong> Comércio varejista de artigos do vestuário e acessórios (CNAE 47.81-4-00)</p>
+                        <p><strong>Situação Cadastral:</strong> <span class="badge badge-custom">Ativa</span></p>
+                        <p><strong>Localização:</strong> Belo Horizonte - MG</p>
+                        <p><strong>Fundação:</strong> 08 de março de 2010</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="highlight-box">
+                        <h3 class="mb-3"><i class="bi bi-gem text-primary me-2"></i>Nossa Paixão</h3>
+                        <p class="mb-4">Selecionamos cuidadosamente cada fragrância em nosso catálogo, garantindo apenas produtos originais e de altíssima qualidade para nossos clientes.</p>
+                        
+                        <h3 class="mb-3"><i class="bi bi-globe-americas text-primary me-2"></i>Importação Direta</h3>
+                        <p class="mb-4">Trabalhamos com parcerias internacionais para trazer as melhores marcas do mundo com preços competitivos e garantia de autenticidade.</p>
+                        
+                        <h3 class="mb-3"><i class="bi bi-heart-fill text-danger me-2"></i>Atendimento Personalizado</h3>
+                        <p>Nossa equipe está sempre pronta para ajudar você a encontrar a fragrância perfeita para cada momento da sua vida.</p>
+                    </div>
+                </div>
             </div>
-            <div class="slide">
-                <img src="https://ext.same-assets.com/1441184407/330298814.jpeg" alt="Banner 2">
-            </div>
-            <div class="slide">
-                <img src="https://ext.same-assets.com/1441184407/3563923940.jpeg" alt="Banner 3">
-            </div>
-            <div class="slide">
-                <img src="https://ext.same-assets.com/1441184407/2415460882.jpeg" alt="Banner 4">
+            
+            <!-- Features -->
+            <div class="row mt-5 pt-4">
+                <div class="col-md-4 text-center mb-4">
+                    <div class="icon-feature">
+                        <i class="bi bi-trophy-fill"></i>
+                    </div>
+                    <h4>Produtos 100% Originais</h4>
+                    <p>Garantia de autenticidade em todas as nossas fragrâncias</p>
+                </div>
+                
+                <div class="col-md-4 text-center mb-4">
+                    <div class="icon-feature">
+                        <i class="bi bi-truck"></i>
+                    </div>
+                    <h4>Entrega Rápida</h4>
+                    <p>Enviamos para todo o Brasil com segurança e agilidade</p>
+                </div>
+                
+                <div class="col-md-4 text-center mb-4">
+                    <div class="icon-feature">
+                        <i class="bi bi-chat-heart-fill"></i>
+                    </div>
+                    <h4>Suporte Especializado</h4>
+                    <p>Atendimento personalizado para escolher a fragrância ideal</p>
+                </div>
             </div>
         </div>
-        <button class="slider-nav prev" onclick="prevSlide()">&#10094;</button>
-        <button class="slider-nav next" onclick="nextSlide()">&#10095;</button>
-        <div class="slider-dots" id="sliderDots"></div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Precisa de ajuda para escolher o produto certo?</h2>
-        <p>Fale agora com um dos nossos especialistas pelo WhatsApp.</p>
-        <a href="https://wa.me/5511925539345" class="btn-whatsapp" target="_blank">
-            <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Falar com Especialista
-        </a>
-    </section>
-
-    <!-- Products Slider -->
-    <section class="products-slider">
-        <div class="products-slider-container" id="productsSlider">
-            <div class="product-slide">
-                <img src="https://ext.same-assets.com/1441184407/4171397527.jpeg" alt="Atox Eco Sil">
-            </div>
-            <div class="product-slide">
-                <img src="https://ext.same-assets.com/1441184407/3517711921.jpeg" alt="Palmeiras - Se é SIL">
-            </div>
-            <div class="product-slide">
-                <img src="https://ext.same-assets.com/1441184407/2924832018.jpeg" alt="Cabo Atoxsil Eco Vencedor">
-            </div>
-            <div class="product-slide">
-                <img src="https://ext.same-assets.com/1441184407/896207015.jpeg" alt="Pocket Pack Nova Embalagem">
+    <!-- Products Section -->
+    <section id="products" class="py-5" style="background-color: var(--light-color);">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nossas Fragrâncias</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="perfume-card">
+                        <div class="card-header">
+                            Perfumes Femininos
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Perfumes Femininos">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">Coleção Feminina</h5>
+                            <p class="card-text">Fragrâncias delicadas e marcantes que realçam sua personalidade.</p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Flores e frutas</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Oriental e amadeirado</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Fresco e cítrico</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Marcas internacionais</li>
+                            </ul>
+                            <p class="price-tag mt-3">A partir de R$ 129,90</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="perfume-card">
+                        <div class="card-header">
+                            Perfumes Masculinos
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1588405748880-8d6d0c1a0c1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Perfumes Masculinos">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">Coleção Masculina</h5>
+                            <p class="card-text">Aromas sofisticados que transmitem personalidade e estilo.</p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Amadeirado e picante</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Fresco e aquático</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Couro e tabaco</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Essências exclusivas</li>
+                            </ul>
+                            <p class="price-tag mt-3">A partir de R$ 139,90</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="perfume-card">
+                        <div class="card-header">
+                            Kits e Presentes
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Kits e Presentes">
+                        <div class="card-body p-4">
+                            <h5 class="card-title">Kits Especiais</h5>
+                            <p class="card-text">Opções perfeitas para presentear quem você ama.</p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Coffret de miniaturas</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Kits com necessaire</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Combos promocionais</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Embalagem premium</li>
+                            </ul>
+                            <p class="price-tag mt-3">A partir de R$ 199,90</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="slider-nav prev" onclick="prevProductSlide()">&#10094;</button>
-        <button class="slider-nav next" onclick="nextProductSlide()">&#10095;</button>
     </section>
 
-    <!-- Orcamento Section -->
-    <section class="orcamento-section">
-        <h2>Solicite seu orçamento agora mesmo!</h2>
-        <p>Nossa equipe responde rapidamente pelo WhatsApp.</p>
-        <a href="https://wa.me/5511925539345" class="btn-orcamento" target="_blank">
-            <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            ORÇAMENTO AQUI !
-        </a>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <a href="#" class="feature-card">
-            <img src="https://ext.same-assets.com/1441184407/2658340302.jpeg" alt="Uma empresa de tradição">
-            <div class="overlay">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
-                <h3>Uma Empresa<br>de Tradição</h3>
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">O que nossos clientes dizem</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Produtos originais e atendimento excelente! Compro há anos e sempre recebo fragrâncias de qualidade. Recomendo demais!"</p>
+                        <h6 class="mt-3">- Ana Paula Silva</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Entrega super rápida e embalagem impecável. O perfume veio muito bem protegido. Já sou cliente fiel!"</p>
+                        <h6 class="mt-3">- Carlos Eduardo</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <div class="rating mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"A variedade de perfumes é incrível! Sempre encontro lançamentos e preços competitivos. Nota 10!"</p>
+                        <h6 class="mt-3">- Mariana Costa</h6>
+                    </div>
+                </div>
             </div>
-        </a>
-        <a href="#" class="feature-card">
-            <img src="https://ext.same-assets.com/1441184407/3529817031.jpeg" alt="EAD">
-            <div class="overlay">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM9 10h2v2H9v-2zm0 4h2v2H9v-2zm4-4h2v2h-2v-2zm4 0h2v2h-2v-2zm-4 4h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
-                </svg>
-                <h3>EAD</h3>
-            </div>
-        </a>
-        <a href="#" class="feature-card">
-            <img src="https://ext.same-assets.com/1441184407/3040247652.jpeg" alt="Campanhas">
-            <div class="overlay">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
-                </svg>
-                <h3>Campanhas</h3>
-            </div>
-        </a>
-        <a href="#" class="feature-card">
-            <img src="https://ext.same-assets.com/1441184407/4099871310.jpeg" alt="Inovação e Tecnologia">
-            <div class="overlay">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7z"/>
-                </svg>
-                <h3>Inovação e<br>Tecnologia</h3>
-            </div>
-        </a>
-        <a href="#" class="feature-card">
-            <img src="https://ext.same-assets.com/1441184407/3471114125.jpeg" alt="Prêmios">
-            <div class="overlay">
-                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
-                </svg>
-                <h3>Prêmios</h3>
-            </div>
-        </a>
-    </section>
-
-    <!-- Products & Services Section -->
-    <section class="products-services">
-        <div class="section-header">
-            <h2>PRODUTOS & SERVIÇOS</h2>
-            <p>A <strong>SIL</strong> entende que não basta produzir bens e serviços de <strong>alta qualidade</strong>. É preciso também buscar a <strong>inovação, tecnologia</strong> e o <strong>bem-estar social</strong>.</p>
         </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-card-image">
-                    <img src="https://ext.same-assets.com/1441184407/1290053063.jpeg" alt="Nossos produtos">
-                    <span class="label">PRODUTOS</span>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5" style="background-color: var(--light-color);">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Galeria de Fragrâncias</h2>
+            
+            <div class="row product-gallery g-3">
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Fragrâncias">
                 </div>
-                <div class="product-card-content">
-                    <h3>Nossos produtos</h3>
-                    <p>Para a SIL, a Qualidade Total é prioridade absoluta, orientando a busca pela excelência. Confira nossos produtos.</p>
-                    <a href="#">Saiba Mais</a>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Perfumes">
                 </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-image">
-                    <img src="https://ext.same-assets.com/1441184407/429656234.jpeg" alt="Tabelas e especificações">
-                    <span class="label">TABELAS</span>
-                </div>
-                <div class="product-card-content">
-                    <h3>Tabelas e especificações</h3>
-                    <p>Tabelas e informações técnicas para apoio nas instalações elétricas.</p>
-                    <a href="#">Saiba Mais</a>
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid" alt="Frascos">
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-card-image">
-                    <img src="https://ext.same-assets.com/1441184407/1288004083.jpeg" alt="Palestras e Apostilas">
-                    <span class="label">PALESTRAS</span>
+            
+            <div class="text-center mt-5">
+                <p class="lead">Conheça nossa seleção completa de perfumes importados</p>
+                <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                    <i class="bi bi-images me-2"></i>Ver Catálogo Completo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Fale Conosco</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info mb-4">
+                        <h4 class="mb-3"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Endereço</h4>
+                        <p>Belo Horizonte, Minas Gerais, Brasil</p>
+                    </div>
+                    
+                    <div class="contact-info mb-4">
+                        <h4 class="mb-3"><i class="bi bi-telephone-fill text-primary me-2"></i>Telefone</h4>
+                        <p>(31) 3333-5555</p>
+                        <p>WhatsApp: (31) 99999-5555</p>
+                    </div>
+                    
+                    <div class="contact-info mb-4">
+                        <h4 class="mb-3"><i class="bi bi-envelope-fill text-primary me-2"></i>E-mail</h4>
+                        <p>contato@anmyperfumes.com.br</p>
+                        <p>vendas@anmyperfumes.com.br</p>
+                    </div>
+                    
+                    <div class="contact-info mb-4">
+                        <h4 class="mb-3"><i class="bi bi-clock-fill text-primary me-2"></i>Horário de Atendimento</h4>
+                        <p>Segunda a Sexta: 9h às 18h</p>
+                        <p>Sábado: 9h às 13h</p>
+                    </div>
                 </div>
-                <div class="product-card-content">
-                    <h3>Palestras e Apostilas</h3>
-                    <p>Preparamos palestras presenciais e apostilas para reciclar e apoiar eletricistas e consumidores.</p>
-                    <a href="#">Saiba Mais</a>
+                
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Assunto</label>
+                            <select class="form-select" id="subject">
+                                <option selected>Selecione um assunto</option>
+                                <option value="product">Informações sobre produtos</option>
+                                <option value="order">Status de pedido</option>
+                                <option value="wholesale">Atacado/Revenda</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea class="form-control" id="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom w-100">Enviar Mensagem</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -990,125 +565,149 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-section">
-                <img src="https://ext.same-assets.com/1441184407/622876340.svg" alt="SIL" style="width: 80px; margin-bottom: 20px;">
-                <h4>CONTATO</h4>
-                <p>Rua Barão de Penedo,<br>319, SP, CEP: 07222-015</p>
-                <p>Telefone: (11) 3377-3333</p>
-                <p>SAC: <span class="highlight">0800 055 0008</span></p>
-                <p>Como chegar: <a href="#" class="link-orange">clique aqui</a></p>
-            </div>
-            <div class="footer-section">
-                <h4>EMPRESA</h4>
-                <a href="#">Histórico</a>
-                <a href="#">Certificados</a>
-                <a href="#">Homologações</a>
-                <a href="#">Prêmios</a>
-                <a href="#">Sustentabilidade</a>
-            </div>
-            <div class="footer-section">
-                <div class="news-item">
-                    <img src="https://ext.same-assets.com/1441184407/1133585648.png" alt="Paulistão">
-                    <div class="news-item-content">
-                        <h5>Sil Fios E Cabos Elétricos</h5>
-                        <a href="#">Anuncia patrocínio do Paulistão 2026 e 2027</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-3"><i class="bi bi-flower2 me-2"></i>Anmy Perfumes Importados LTDA</h5>
+                    <p>Fragrâncias que encantam desde 2010.</p>
+                    <p>CNPJ: 47.964.644/0001-63</p>
+                    <p>Belo Horizonte - MG</p>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3">Navegação</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#products">Perfumes</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3">Conecte-se Conosco</h5>
+                    <div class="d-flex mb-3">
+                        <a href="#" class="me-3 text-secondary fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="me-3 text-secondary fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="me-3 text-secondary fs-4"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#" class="text-secondary fs-4"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                    <p class="mb-2">Receba novidades e ofertas</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Seu e-mail" id="newsletterEmail">
+                        <button class="btn btn-outline-light" type="button" id="newsletterBtn">Inscrever</button>
                     </div>
                 </div>
-                <div class="news-item">
-                    <img src="https://ext.same-assets.com/1441184407/2497234362.png" alt="MESC">
-                    <div class="news-item-content">
-                        <h5>SIL Conquista Novamente<br>Prêmio MESC Do Google</h5>
-                        <a href="#">Campeã no segmento de Material Elétrico - Fios e Cabos</a>
-                    </div>
+            </div>
+            
+            <hr class="mt-4 mb-3">
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">© 2023 Anmy Perfumes Importados LTDA. Todos os direitos reservados.</p>
+                    <p class="small mt-2">"Encantando vidas através das fragrâncias mais exclusivas do mundo"</p>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright ©️ 2025 <a href="#">Sil Fios e Cabos Elétricos</a>. Powered by <a href="#">IdeasOnline</a>.</p>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp">
-        <a href="https://wa.me/5511925539345" target="_blank">
-            <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Fazer Orçamento
-        </a>
+    <!-- Modal for Gallery -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="galleryModalLabel">Catálogo Completo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Explore nosso catálogo completo com mais de 500 fragrâncias das melhores marcas internacionais.</p>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="img-fluid" alt="Perfume 1">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="img-fluid" alt="Perfume 2">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="img-fluid" alt="Perfume 3">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h6>Marcas disponíveis:</h6>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Nacionais e Importados</li>
+                                    <li>Perfumes Femininos</li>
+                                    <li>Perfumes Masculinos</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li>Kits e Combos</li>
+                                    <li>Linha Infantil</li>
+                                    <li>Acessórios</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-custom">Solicitar Catálogo</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-        // Hero Slider
-        let heroCurrentSlide = 0;
-        const heroSlider = document.getElementById('heroSlider');
-        const heroSlides = heroSlider.querySelectorAll('.slide');
-        const totalHeroSlides = heroSlides.length;
-        const sliderDots = document.getElementById('sliderDots');
-
-        // Create dots
-        for (let i = 0; i < totalHeroSlides; i++) {
-            const dot = document.createElement('span');
-            dot.className = 'dot' + (i === 0 ? ' active' : '');
-            dot.onclick = () => goToSlide(i);
-            sliderDots.appendChild(dot);
-        }
-
-        function updateSlider() {
-            heroSlider.style.transform = `translateX(-${heroCurrentSlide * 100}%)`;
-            document.querySelectorAll('.slider-dots .dot').forEach((dot, index) => {
-                dot.classList.toggle('active', index === heroCurrentSlide);
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
             });
-        }
-
-        function nextSlide() {
-            heroCurrentSlide = (heroCurrentSlide + 1) % totalHeroSlides;
-            updateSlider();
-        }
-
-        function prevSlide() {
-            heroCurrentSlide = (heroCurrentSlide - 1 + totalHeroSlides) % totalHeroSlides;
-            updateSlider();
-        }
-
-        function goToSlide(index) {
-            heroCurrentSlide = index;
-            updateSlider();
-        }
-
-        // Auto slide
-        setInterval(nextSlide, 5000);
-
-        // Products Slider
-        let productCurrentSlide = 0;
-        const productsSlider = document.getElementById('productsSlider');
-        const productSlides = productsSlider.querySelectorAll('.product-slide');
-        const totalProductSlides = productSlides.length;
-
-        function updateProductSlider() {
-            productsSlider.style.transform = `translateX(-${productCurrentSlide * 100}%)`;
-        }
-
-        function nextProductSlide() {
-            productCurrentSlide = (productCurrentSlide + 1) % totalProductSlides;
-            updateProductSlider();
-        }
-
-        function prevProductSlide() {
-            productCurrentSlide = (productCurrentSlide - 1 + totalProductSlides) % totalProductSlides;
-            updateProductSlider();
-        }
-
-        // Auto slide products
-        setInterval(nextProductSlide, 6000);
-
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+        });
+        
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu contato! Em breve nossa equipe entrará em contato para ajudá-lo a encontrar a fragrância perfeita.');
+            this.reset();
+        });
+        
+        // Newsletter subscription
+        document.getElementById('newsletterBtn').addEventListener('click', function() {
+            const emailInput = document.getElementById('newsletterEmail');
+            if(emailInput.value && emailInput.value.includes('@')) {
+                alert('Obrigado por se inscrever! Você receberá nossas novidades e ofertas especiais.');
+                emailInput.value = '';
+            } else {
+                alert('Por favor, insira um e-mail válido.');
+            }
+        });
+        
+        // Gallery modal button
+        document.querySelectorAll('.btn-custom').forEach(btn => {
+            if(btn.textContent.includes('Solicitar Catálogo')) {
+                btn.addEventListener('click', function() {
+                    alert('Em breve você receberá nosso catálogo completo por e-mail!');
+                });
+            }
         });
     </script>
 </body>
